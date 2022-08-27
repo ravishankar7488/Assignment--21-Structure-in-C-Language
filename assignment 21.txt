@@ -1,0 +1,349 @@
+                                                                  Assignment - 21 A Job Ready Bootcamp in C++, DSA and IOT MySirG
+
+                                                                                           Structure
+
+
+1. Define a structure Employee with member variables id, name, salary
+
+Ans.#include<iostream>
+using namespace std;
+struct employee{int id;
+char name[20];
+float salary;
+};
+int main(){employee a;
+
+cout<<"Enter Employee Id: ";
+cin>>a.id;
+fflush(stdin);
+cout<<"Enter Employee Name: ";
+fgets(a.name,20,stdin);
+cout<<"Enter Employee salary: ";
+cin>>a.salary;
+
+cout<<a.id<<endl<<a.name<<endl<<a.salary;
+
+return 0;
+}
+
+
+2. Write a function to take input employee data from the user. [ Refer structure from
+question 1 ]
+
+Ans.#include<iostream>
+using namespace std;
+struct employee{int id;
+char name[20];
+float salary;
+};
+int main(){employee a;
+
+cout<<"Enter Employee Id: ";
+cin>>a.id;
+fflush(stdin);
+cout<<"Enter Employee Name: ";
+fgets(a.name,20,stdin);
+cout<<"Enter Employee salary: ";
+cin>>a.salary;
+
+
+
+return 0;
+}
+
+
+3. Write a function to display employee data. [ Refer structure from question 1 ]
+
+Ans.#include<iostream>
+using namespace std;
+struct employee{int id;
+char name[20];
+float salary;
+};
+int main(){employee a;
+
+cout<<"Enter Employee Id: ";
+cin>>a.id;
+fflush(stdin);
+cout<<"Enter Employee Name: ";
+fgets(a.name,20,stdin);
+cout<<"Enter Employee salary: ";
+cin>>a.salary;
+
+cout<<a.id<<endl<<a.name<<endl<<a.salary;
+
+return 0;
+}
+
+
+4. Write a function to find the highest salary employee from a given array of 10
+employees. [ Refer structure from question 1]
+
+Ans.#include<iostream>
+using namespace std;
+struct employee {
+	int id;
+	char name[20];
+	float salary;
+};
+int main() {
+	employee a[10],temp;
+	for(int i=0; i<10; i++) {
+		cout<<"Enter Employee Id: ";
+		cin>>a[i].id;
+		fflush(stdin);
+		cout<<"Enter Employee Name: ";
+		fgets(a[i].name,20,stdin);
+		cout<<"Enter Employee salary: ";
+		cin>>a[i].salary;
+
+
+	}
+
+	for(int i=0; i<10; i++) {
+		for(int j=i+1; j<10; j++) {
+			if(a[i].salary>a[j].salary) {
+				temp=a[i];
+				a[i]=a[j];
+				a[j]=temp;
+			}
+		}
+	}
+
+	cout<<a[9].id<<endl<<a[9].name<<endl<<a[9].salary;
+
+	return 0;
+}
+
+
+5. Write a function to sort employees according to their salaries [ refer structure from
+question 1]
+
+Ans.#include<iostream>
+using namespace std;
+struct employee {
+	int id;
+	char name[20];
+	float salary;
+};
+int main() {
+	employee a[5],temp;
+	for(int i=0; i<5; i++) {
+		cout<<"Enter Employee Id: ";
+		cin>>a[i].id;
+		fflush(stdin);
+		cout<<"Enter Employee Name: ";
+		fgets(a[i].name,20,stdin);
+		cout<<"Enter Employee salary: ";
+		cin>>a[i].salary;
+
+
+	}
+
+	for(int i=0; i<5; i++) {
+		for(int j=i+1; j<5; j++) {
+			if(a[i].salary>a[j].salary) {
+				temp=a[i];
+				a[i]=a[j];
+				a[j]=temp;
+			}
+		}
+	}
+	
+	for(int i=0;i<5;i++)
+	cout<<a[i].id<<"    "<<a[i].name<<"  "<<a[i].salary;
+
+	return 0;
+}
+
+
+6. Write a function to sort employees according to their names [refer structure from
+question 1]
+
+Ans.#include<iostream>
+using namespace std;
+int compare(char *str1,char *str2) {
+	for(int i=0; i<20; i++) {
+		if(*(str1+i)>*(str2+i)) {
+			return 1;
+		}
+
+		if(*(str1+i)<*(str2+i)) {
+			return 2;
+		}
+	}
+	return 0;
+}
+
+struct employee {
+	int id;
+	char name[20];
+	float salary;
+};
+int main() {
+	employee a[5],temp;
+	for(int i=0; i<5; i++) {
+		cout<<"Enter Employee Id: ";
+		cin>>a[i].id;
+		fflush(stdin);
+		cout<<"Enter Employee Name: ";
+		fgets(a[i].name,20,stdin);
+		cout<<"Enter Employee salary: ";
+		cin>>a[i].salary;
+
+
+	}
+
+	for(int i=0; i<5; i++) {
+		for(int j=i+1; j<5; j++) {
+			if(compare(a[i].name,a[j].name)==1) {
+				temp=a[i];
+				a[i]=a[j];
+				a[j]=temp;
+			}
+		}
+	}
+
+	for(int i=0; i<5; i++)
+		cout<<a[i].id<<"    "<<a[i].name<<"  "<<a[i].salary;
+
+	return 0;
+}
+
+
+7. Write a program to calculate the difference between two time periods.
+
+Ans.#include<iostream>
+using namespace std;
+struct difference {
+	int year,month;
+};
+int main() {
+	struct difference  difference, x,y;
+	int tx,ty;
+	difference.month=0;
+	difference.year=0;
+	cin>>x.year>>x.month;
+	cin>>y.year>>y.month;
+	tx=x.year*12+x.month;
+	ty=y.year*12+y.month;
+
+	if(tx>ty) {
+		difference.month=tx-ty;
+	}
+
+	else if(ty>tx)difference.month=ty-tx;
+	else cout<<"No difference";
+	while(difference.month>=12) {
+		if(difference.month>=12) {
+			difference.year++;
+			difference.month-=12;
+		}
+	}
+	cout<<"year:"<<difference.year<<" Month: "<<difference.month;
+	return 0;
+}
+
+
+8. Write a program to store information of 10 students and display them using structure.
+
+Ans.#include<iostream>
+using namespace std;
+struct student {
+	int id;
+	char name[20];
+	char sec;
+};
+
+int main() {
+	struct student a[10];
+	for(int i=0; i<10; i++) {
+		cout<<"Enter Id: ";
+		cin>>a[i].id;
+		cout<<"Enter Name: ";
+		cin>>a[i].name;
+		cout<<"Enter Section: ";
+		cin>>a[i].sec;
+
+	}
+
+	for(int i=0; i<10; i++) {
+
+		cout<<"\nId: "<<a[i].id;
+		cout<<"\nName: "<<a[i].name;
+		cout<<"\nSection: "<<a[i].sec;
+	}
+	return 0;
+
+}
+
+
+9. Write a program to store information of n students and display them using structure
+
+Ans.#include<iostream>
+using namespace std;
+struct student {
+	int id;
+	char name[20];
+	char sec;
+};
+
+int main() {
+	int n;
+	cout<<"Enter number of students:";
+	cin>>n;
+	
+	struct student a[n];
+	for(int i=0; i<n; i++) {
+		cout<<"Enter Id: ";
+		cin>>a[i].id;
+		cout<<"Enter Name: ";
+		cin>>a[i].name;
+		cout<<"Enter Section: ";
+		cin>>a[i].sec;
+
+	}
+
+	for(int i=0; i<n; i++) {
+
+		cout<<"\nId: "<<a[i].id;
+		cout<<"\nName: "<<a[i].name;
+		cout<<"\nSection: "<<a[i].sec;
+	}
+	return 0;
+
+}
+
+
+10. Write a program to enter the marks of 5 students in Chemistry, Mathematics and
+Physics (each out of 100) using a structure named Marks having elements roll no.,
+name, chem_marks, maths_marks and phy_marks and then display the percentage
+of each student.
+
+Ans.#include<iostream>
+using namespace std;
+struct student {
+	int roll_no,chem_marks,math_marks,phy_marks;
+	char name[20];
+};
+
+int main() {
+	student stud[5];
+	
+	for(int i=0; i<5; i++) {
+		cout<<"Enter Roll: ";
+		cin>>stud[i].roll_no;
+		cout<<endl<<"Enter Name: ";
+		cin>>stud[i].name;
+		cout<<endl<<"Enter Physics Marks: ";
+		cin>>stud[i].phy_marks;
+		cout<<endl<<"Enter Math Marks: ";
+		cin>>stud[i].math_marks;
+		cout<<endl<<"Enter Chemistry Marks: ";
+		cin>>stud[i].chem_marks;
+	}
+	for(int i=0;i<5;i++){
+	int per=(stud[i].phy_marks+stud[i].chem_marks+stud[i].math_marks)*100/300;
+	cout<<"\nPercentage of "<<stud[i].name<< ":"<<per;
+	}
+}
